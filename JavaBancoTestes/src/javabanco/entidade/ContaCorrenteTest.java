@@ -60,5 +60,13 @@ public class ContaCorrenteTest {
 		
 		cc.debito(-10);		
 	}
+	
+	@Test
+	public void testVaiNaoDarErro() {
+		ContaCorrente cc = new ContaCorrente();
+		cc.credito(100);
+		cc.credito(200);
+		assertEquals(300, cc.saldo(), 0);
+	}
 
 }
